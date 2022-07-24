@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+$base-color1: #0c002e;
+$icon-color: #1495ff;
+$font1: 'Space Mono', monospace;
+$font2: 'Mulish', sans-serif;
+
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin media-sx {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (min-width: 601px) and (max-width: 1299px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: 1300px) and (max-width: 1900px) {
+    @content;
+  }
+}
+
+@mixin sub-title {
+  color: #fff;
+  text-shadow: 0 0 3px #fff;
+  font-family: $font1;
+  font-size: 2.8rem;
+  margin: 180px 0;
+  letter-spacing: 3px;
+
+  @include media-sm {
+    font-size: 2.3rem;
+    margin-top: 50px;
+  }
+
+  @include media-sx {
+    font-size: 2rem;
+    margin-bottom: 100px;
+  }
+}
+
+@mixin projects-div {
+  padding: 20px 25px;
+  border-radius: 30px;
+  width: 80vw;
+  max-width: 1700px;
+  background: rgba(240, 238, 243, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+@mixin image-fit {
+  #image-1 {
+    object-position: 15%;
+  }
+
+  #image-23 {
+    object-position: 45%;
+  }
+
+  #image-3,
+  #image-4 {
+    object-position: left top;
+  }
+
+  #image-9 {
+    object-position: 8%;
+  }
+
+  #image-25 {
+    object-position: left;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ojok Simon Peter Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/style.css" type="text/css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/5038/5038305.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/e1fe8e6842.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <nav id="side-nav">
+      <img src="images/bestphoto.JPG" alt="profile picture" id="profile" />
+      <ul>
+        <li>
+          <a
+            href="https://github.com/bigmosi/)"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/kinyera_amos"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/kinyera-amos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><i class="fa fa-home"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <header>
+      <nav id="nav-links">
+        <ul>
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="name">
+        <h1>Ojok Simon Peter</h1>
+        <h2>IOS and Android Developer</h2>
+      </div>
+    </header>
+    <main>
+      <section id="about-me">
+        <h2>About Me</h2>
+        <p>
+          I'm a web developer who loves learning new skills and put my knowledge
+          into building projects.
+        </p>
+        <p>
+          Currently, I'm a student at Microverse, which is an online software
+          school where we study full-stack web development. We are getting
+          experience in pair programming with the driver/navigator method. In
+          this multi-cultural environment we also learn how to manage our time,
+          how to communicate effectively with our peers and work together as a
+          team. Until now, I gained skills in HTML, CSS/Sass, JavaScript and
+          Git.
+        </p>
+      </section>
+      <section id="projects">
+        <h2 id="projects-heading">Projects</h2>
+        <nav id="projects-navbar">
+          <ul>
+            <li><a class="projects-nav">API</a></li>
+            <li><a class="projects-nav">Tools</a></li>
+            <li><a class="projects-nav">CSS Art</a></li>
+            <li><a class="projects-nav">Clone</a></li>
+            <li><a class="projects-nav">Games</a></li>
+            <li><a class="projects-nav">Other</a></li>
+          </ul>
+        </nav>
+        <div id="main-div"></div>
+      </section>
+      <section id="contact">
+        <h2 id="contact-heading">Contact</h2>
+        <div>
+          <p>
+            I'm always interested in hearing about new projects, so if you'd
+            like to chat please get in touch.
+          </p>
+          <form action="https://formspree.io/f/mnqwdwzl" method="POST">
+            <fieldset>
+              <label>
+                Name:
+                <input
+                  type="text"
+                  name="name"
+                  id="visitor-name"
+                  placeholder="Enter your name..."
+                  required
+                  pattern="[A-Za-z\s]+"
+                  maxlength="20"
+                />
+              </label>
+              <label>
+                Email:
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email..."
+                  required
+                />
+              </label>
+            </fieldset>
+            <label>
+              Message:
+              <textarea
+                name="message"
+                placeholder="Type your message..."
+                minlength="5"
+                maxlength="160"
+                required
+              ></textarea>
+            </label>
+            <button type="submit" id="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

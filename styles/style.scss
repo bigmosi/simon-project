@@ -1,0 +1,789 @@
+@import "base";
+
+::-webkit-scrollbar {
+  width: 15px;
+  background: $base-color1;
+
+  @include media-sx {
+    width: 10px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $icon-color;
+  border-radius: 10px;
+  background: $base-color1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $icon-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f65ee0;
+}
+
+#side-nav {
+  @include center;
+
+  @include media-sx {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    max-width: unset;
+    padding: 40px 0;
+  }
+
+  @include media-sm {
+    padding: 25px 10px;
+  }
+
+  justify-content: flex-start;
+  gap: 20%;
+  background: $base-color1;
+  padding: 20px 10px;
+  width: 15%;
+  max-width: 120px;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  transition: 0.5s;
+
+  #profile {
+    border-radius: 50%;
+    width: 100%;
+
+    @include media-sx {
+      display: none;
+    }
+  }
+
+  ul {
+    @include center;
+
+    @include media-sx {
+      flex-direction: row;
+      width: 50%;
+    }
+
+    width: 100%;
+    height: 50%;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+
+      a {
+        color: $icon-color;
+
+        &:hover {
+          color: #f65ee0;
+          text-shadow: 0 0 30px #fff;
+        }
+
+        i {
+          font-size: 2.3rem;
+
+          @include media-sx {
+            font-size: 1.5rem;
+          }
+
+          @include media-sm {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  @include center;
+
+  height: 100vh;
+  background: url('../images/header-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-left: 110px;
+
+  @include media-sx {
+    background-position: 15%;
+    margin-left: 0;
+  }
+
+  @include media-sm {
+    background-position: 25%;
+  }
+
+  #name {
+    border-radius: 20px;
+    padding: 30px 20px;
+
+    @include center;
+
+    h1 {
+      font-family: $font1;
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 5px 0 30px #000;
+
+      @include media-sx {
+        font-size: 2rem;
+      }
+
+      @include media-sm {
+        font-size: 3.5rem;
+      }
+    }
+
+    h2 {
+      font-family: $font2;
+      color: #fff;
+      font-size: 2rem;
+
+      @include media-sx {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  #nav-links {
+    position: absolute;
+    top: 3%;
+    width: 40%;
+    max-width: 500px;
+    font-family: $font1;
+    font-size: 1.5rem;
+
+    @include media-sx {
+      @include center;
+
+      top: 2%;
+      height: 180px;
+      justify-content: flex-start;
+    }
+
+    @include media-sm {
+      width: 60%;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      @include media-sx {
+        background: rgba(12, 1, 71, 0.5);
+        border-radius: 15px;
+        padding: 5px 10px;
+      }
+
+      li {
+        list-style: none;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          border-radius: 15px;
+          padding: 10px 20px;
+          background: rgba(222, 225, 253, 0.1);
+
+          &:hover {
+            color: $icon-color;
+            text-shadow: 0 0 10px $icon-color;
+            box-shadow: 0 0 10px #fff;
+          }
+
+          @include media-sx {
+            font-size: 1rem;
+            background: transparent;
+            text-shadow: 0 0 10px #fff;
+
+            &:hover {
+              font-weight: 700;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  @include center;
+
+  margin-left: 110px;
+  background: url('../images/main-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: flex-start;
+
+  @include media-sx {
+    margin-left: 0;
+  }
+
+  @include media-sm {
+    margin-left: 88px;
+  }
+
+  #about-me {
+    @include center;
+
+    height: 100vh;
+
+    @include media-sx {
+      height: auto;
+    }
+
+    h2 {
+      @include sub-title;
+    }
+
+    p {
+      width: 80%;
+      text-align: center;
+      font-size: 2.2rem;
+      font-family: $font2;
+      color: #fff;
+      line-height: 2;
+      font-weight: 500;
+
+      @include media-sm {
+        font-size: 1.5rem;
+        width: 90%;
+      }
+
+      @include media-sx {
+        width: 92%;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  #projects {
+    @include center;
+
+    min-height: 100vh;
+
+    h2 {
+      @include sub-title;
+    }
+
+    nav {
+      @include projects-div;
+
+      width: 70%;
+      margin-bottom: 50px;
+
+      @include media-sm {
+        width: 100%;
+      }
+
+      @include media-sx {
+        width: 80%;
+        padding: 15px;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-sx {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        li {
+          font-family: $font1;
+          font-size: 1.2rem;
+          list-style: none;
+
+          @include media-sm {
+            font-size: 1rem;
+          }
+
+          @include media-sx {
+            font-size: 1rem;
+          }
+
+          a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+              color: $icon-color;
+              text-shadow: 0 0 10px $icon-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    #main-div {
+      @include projects-div;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 50px;
+      justify-items: center;
+      align-content: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      width: 85vw;
+      max-width: 1800px;
+      margin-bottom: 200px;
+
+      @include media-md {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80vw;
+        max-width: 1200px;
+      }
+
+      @include media-sm {
+        grid-template-columns: 1fr;
+        width: 70vw;
+        max-width: 600px;
+      }
+
+      @include media-sx {
+        grid-template-columns: 1fr;
+        width: 90vw;
+        max-width: 500px;
+
+      }
+
+      .project {
+        background: #fff;
+        padding: 20px 20px 30px 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+
+        @include media-sx {
+          padding: 15px 15px 20px 15px;
+          gap: 20px;
+        }
+
+        img {
+          width: 450px;
+          height: 450px;
+          object-fit: cover;
+          object-position: top;
+          border-radius: 20px;
+
+          @include media-md {
+            width: 420px;
+            height: 420px;
+          }
+
+          @include media-sm {
+            width: 350px;
+            height: 350px;
+          }
+
+          @include media-sx {
+            width: 250px;
+            height: 250px;
+          }
+        }
+
+        @include image-fit;
+
+        h3 {
+          font-family: $font1;
+          font-size: 1.5rem;
+
+          @include media-md {
+            font-size: 1.3rem;
+          }
+
+          @include media-sm {
+            font-size: 1.2rem;
+          }
+
+          @include media-sx {
+            font-size: 0.9rem;
+            text-align: center;
+          }
+        }
+
+        .languages-tools {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          span {
+            font-size: 1.1rem;
+            font-family: $font2;
+            background: rgba(26, 2, 105, 0.1);
+            border-radius: 20px;
+            width: 32%;
+            padding: 10px 0;
+            text-align: center;
+
+            @include media-md {
+              width: 25%;
+              font-size: 1rem;
+            }
+
+            @include media-sm {
+              font-size: 0.9rem;
+            }
+
+            @include media-sx {
+              font-size: 0.7rem;
+            }
+          }
+        }
+
+        .see-project {
+          width: 100%;
+          border-radius: 20px;
+          padding: 10px;
+          font-size: 1.2rem;
+          font-family: $font2;
+          font-weight: 700;
+          border: none;
+          background: transparent;
+          box-shadow: 0 3px 3px rgba(1, 1, 90, 0.5);
+
+          @include media-sx {
+            font-size: 0.9rem;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background: transparent;
+            box-shadow: 0 0 20px rgb(1, 1, 63);
+          }
+        }
+      }
+    }
+  }
+
+  #contact {
+    width: 80%;
+    padding-bottom: 120px;
+
+    @include media-sx {
+      height: auto;
+    }
+
+    @include media-sm {
+      height: auto;
+    }
+
+    @include center;
+
+    h2 {
+      @include sub-title;
+
+      @include media-sm {
+        margin-bottom: 100px;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1600px;
+
+      @include media-sm {
+        flex-direction: column;
+        gap: 100px;
+      }
+
+      @include media-sx {
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      p {
+        color: #fff;
+        font-family: $font2;
+        text-align: center;
+        font-size: 3.2rem;
+        line-height: 1.5;
+        width: 40%;
+
+        @include media-md {
+          font-size: 2.8rem;
+        }
+
+        @include media-sm {
+          font-size: 2.2rem;
+          width: 70%;
+        }
+
+        @include media-sx {
+          font-size: 1.8rem;
+          width: 100%;
+        }
+      }
+
+      form {
+        @include center;
+
+        @include media-sm {
+          width: 100%;
+        }
+
+        @include media-sx {
+          width: 100%;
+        }
+
+        gap: 50px;
+        width: 50%;
+        margin-bottom: 80px;
+
+        fieldset {
+          width: 100%;
+          display: flex;
+          gap: 25px;
+          border: none;
+
+          @include media-sx {
+            flex-direction: column;
+          }
+        }
+
+        label {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          color: #fff;
+          font-family: $font2;
+          font-size: 1.5rem;
+          font-weight: 700;
+
+          @include media-sx {
+            font-size: 1rem;
+          }
+
+          input,
+          textarea {
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            border: none;
+
+            @include media-sx {
+              font-size: 1rem;
+            }
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          textarea {
+            height: 200px;
+            font-family: $font2;
+
+            @include media-sx {
+              height: 100px;
+            }
+          }
+        }
+
+        #submit {
+          align-self: flex-start;
+          width: 20%;
+          border-radius: 20px;
+          font-family: $font2;
+          border: none;
+          font-size: 1.2rem;
+          padding: 10px;
+          background: #fff;
+          font-weight: 700;
+
+          @include media-sx {
+            width: 25%;
+            font-size: 1rem;
+            padding: 8px 0;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background: transparent;
+            color: #fff;
+            outline: thin solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popup {
+  width: 60vw;
+  height: 90vh;
+  max-width: 1200px;
+  padding: 30px 80px 50px 80px;
+  background: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  border-radius: 20px;
+  overflow-y: scroll;
+
+  @include center;
+
+  justify-content: space-between;
+  gap: 100px;
+
+  @include media-sm {
+    padding: 100px 30px 50px 30px;
+    gap: 50px;
+  }
+
+  @include media-sx {
+    padding: 60px 20px 40px 20px;
+    height: 75vh;
+    width: 90vw;
+    gap: 30px;
+  }
+
+  .exit {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background: transparent;
+    border: none;
+
+    @include media-sx {
+      right: 5%;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: #fff;
+
+      @include media-sx {
+        font-size: 1.5rem;
+      }
+
+      @include media-sm {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    @include media-sx {
+      width: 280px;
+      height: auto;
+    object-fit: unset;
+    }
+  }
+
+  .popup-h2 {
+    color: #fff;
+    font-family: $font1;
+    font-size: 2.5rem;
+
+    @include media-sm {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    @include media-sx {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-family: $font2;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+
+    @include media-sm {
+      font-size: 1.5rem;
+    }
+
+    @include media-sx {
+      font-size: 1rem;
+    }
+  }
+
+  .buttons-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    @include media-sx {
+      width: 100%;
+    }
+
+    button {
+      width: 20%;
+      font-family: $font2;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 10px;
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+
+      @include media-sm {
+        width: 30%;
+        font-size: 1rem;
+      }
+
+      @include media-md {
+        width: 25%;
+      }
+
+      @include media-sx {
+        width: 100%;
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: $base-color1;
+        outline: 1px solid $icon-color;
+        box-shadow: 0 0 5px $icon-color;
+      }
+
+      a {
+        text-decoration: none;
+        color: $icon-color;
+      }
+    }
+  }
+}
+
+.margin-zero {
+  margin-left: 0;
+}
